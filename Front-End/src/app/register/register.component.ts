@@ -91,8 +91,6 @@ export class RegisterComponent implements OnInit {
           this.showAlert.NotRegister("Error", "Event not found")
           this.FormView = false
         }
-        
-        //Swal.close();
       },
         err => {
           console.log(err);
