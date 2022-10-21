@@ -1,0 +1,125 @@
+<div class="p-4 container">
+    <div class="col-md-12">
+        <br>
+        <div class="justify-content-center">
+            <div class="col-lg-12 col-md-12">
+                <div class="card o-hidden border-0 shadow-lg my-1">
+                    <div class="card-body">
+                            <div class="col-lg-12">
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4">Search Event - Form Register</h1>
+                                </div>
+                                <form [formGroup]="FormEvent" (ngSubmit)="SearchEvent()">
+                                    <div class="mb-2 row">
+
+                                        <Label class="col-sm-2 col-form-label">Id Event</Label>
+                                        <div class="col-sm-8">
+                                            <input type="number" formControlName="IdEvent" class="form-control"
+                                                placeholder="Id Event">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary col-sm-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z">
+                                                </path>
+                                            </svg>
+                                            Search
+                                        </button>
+
+                                    </div>
+                                </form>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="justify-content-center" *ngIf="FormView">
+            <div class="col-lg-12 col-md-12">
+                <div class="card o-hidden border-0 shadow-lg my-1">
+                    <div class="card-body">
+                        <form [formGroup]="FormSeach" (ngSubmit)="RegisterInfo()">
+                            <div class="col-lg-12">
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4">Registrations For Event {{DataEvent[0]["NameEvent"]}}, limit of {{DataEvent[0]["LimitPeople"]}}</h1>
+                                </div>
+                                <form [formGroup]="FormValid" (ngSubmit)="SearchCCMSID()">
+                                    <div class="mb-2 row">
+
+                                        <Label class="col-sm-2 col-form-label">ID CCMS </Label>
+                                        <div class="col-sm-8">
+                                            <input type="number" formControlName="IDCCMS" class="form-control"
+                                                placeholder="Id CCMS">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary col-sm-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z">
+                                                </path>
+                                            </svg>
+                                            Search
+                                        </button>
+
+                                    </div>
+                                </form>
+                                <div class="mb-2 row">
+                                    <Label class="col-sm-2 col-form-label">Name<sup style="color: red;">*</sup></Label>
+                                    <div class="col-sm-10">
+                                        <input type="text" formControlName="Name" class="form-control"
+                                            placeholder="Name Agent">
+                                    </div>
+                                </div>
+                                <div class="mb-2 row">
+                                    <Label class="col-sm-2 col-form-label">Id Fiscal <sup
+                                            style="color: red;">*</sup></Label>
+                                    <div class="col-sm-10">
+                                        <input type="number" formControlName="IdFiscal" class="form-control"
+                                            placeholder="DNI">
+                                    </div>
+                                </div>
+                                <div class="mb-2 row">
+                                    <Label class="col-sm-2 col-form-label">City <sup style="color: red;">*</sup></Label>
+                                    <div class="col-sm-10">
+                                        <select name="City" formControlName="City" class="form-select ">
+                                            <option *ngFor="let City of DataCity" [value]="City.Id">{{City.City}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-2 row">
+                                    <Label class="col-sm-2 col-form-label">Gender<sup
+                                            style="color: red;">*</sup></Label>
+                                    <div class="col-sm-10">
+                                        <select name="Gender" formControlName="Gender" class="form-select ">
+                                            <option *ngFor="let Genders of DataGender" [value]="Genders.Id">
+                                                {{Genders.Gender}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-2 row">
+                                    <Label class="col-sm-2 col-form-label">Age</Label>
+                                    <div class="col-sm-10">
+                                        <input type="text" formControlName="Age" class="form-control" placeholder="Age">
+                                    </div>
+                                </div>
+
+                                <div class="mb-2 row">
+                                    <button type="submit" class="btn btn-primary">
+
+                                        Register me!
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <br><br><br>
+</div>
